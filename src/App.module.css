@@ -1,0 +1,9 @@
+div::before{
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 200px;
+  background: var(--gray-700);
+}
+
