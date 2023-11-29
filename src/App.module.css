@@ -1,9 +1,29 @@
-div::before{
-  position: absolute;
-  top: 0;
-  content: "";
+.wrapper {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 200px;
   background: var(--gray-700);
 }
 
+.main {
+  position: absolute;
+  top: 175px;
+  width: 736px;
+  height: 600px;
+  border: 1px solid blue;
+  border-radius: 15px;
+  background: purple;
+}
