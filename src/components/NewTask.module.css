@@ -1,0 +1,43 @@
+.newTask{
+    display: flex;
+    gap: 1rem;
+}
+
+input {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-700);
+    color:var(--gray-100);
+    background: var(--gray-500);
+}
+
+input:not(:placeholder-shown) {
+    border: 1px solid var(--purple-dark);
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    border: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    color: var(--gray-100);
+    background: var(--blue-dark);
+
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background: var(--blue);
+}
