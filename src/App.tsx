@@ -2,6 +2,7 @@ import styles from './App.module.css';
 import './global.css';
 import Logo from './assets/Logo.png';
 import { NewTask } from './components/NewTask';
+import { Task } from './components/Task';
 
 export function App() {
   return (
@@ -23,9 +24,12 @@ export function App() {
             </div>
             <div className={styles.done}>
               Concluídas
-              <span>0</span>
+              <span>2 de 5</span>
             </div>
           </div>
+
+          <Task />
+
         </div>
       </main>
 

@@ -19,7 +19,7 @@ input:not(:placeholder-shown) {
     border: 1px solid var(--purple-dark);
 }
 
-button {
+button[type="submit"]{
     display: flex;
     align-items: center;
     justify-content: center;

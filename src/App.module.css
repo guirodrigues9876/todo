@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,7 @@
 
 .created {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   color: var(--blue);
   font-size: 0.875rem;
@@ -48,6 +49,7 @@
 }
 .done {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   color: var(--purple);
   font-size: 0.875rem;
