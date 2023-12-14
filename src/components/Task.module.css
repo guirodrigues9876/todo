@@ -1,4 +1,3 @@
-
 .container {
     display: flex;
     flex-direction: row;
@@ -23,7 +22,6 @@
     color: var(--gray-300);
     text-decoration: line-through;
 }
-
 
 label {
     display: flex;
@@ -68,24 +66,30 @@ label input[type='checkbox']{
 }
 
 .container > button {
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
+
     border: none;
-    padding: 5px;
+    background: transparent;
+    transition: 0.2s all;
 }
 
 .container > button:hover {
+    background: var(--gray-400);
+    border-radius: 4px;
 }
 
 .container > button > svg {
+    border-radius: 4px;
     fill: var(--gray-300);
+    transition: 0.2s all;
+
 }
 
 .container > button > svg:hover {
-    border-radius: 4px;
-    background: var(--gray-400);
     cursor: pointer;
     fill: var(--red);    
 }

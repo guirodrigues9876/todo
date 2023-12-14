@@ -21,7 +21,12 @@ export function Task(){
                     { checked && <Check size={12} />}
                 </span>
             </label>
-            <p className={`${styles.paragraph} ${paragraphCheckedClassname}`}>Este é um exemplo de tarefa</p>
+
+            <p className={`${styles.paragraph} ${paragraphCheckedClassname}`}>
+                Este é um exemplo de tarefa
+            </p>
+            
+            
             <button>
                 <Trash size={24} weight="bold" />
             </button>
