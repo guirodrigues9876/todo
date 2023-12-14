@@ -3,11 +3,11 @@ import { Trash, Check } from '@phosphor-icons/react'
 import styles from './Task.module.css';
 import { useState } from 'react';
 
-export function Task(){
+export function Task({ task }){
 
-    const [checked, setChecked] = useState(false);
-    const checkboxCheckedClassname = checked ? styles['checkbox-checked'] : styles['checkbox-unchecked']
-    const paragraphCheckedClassname = checked ? styles['paragraph-checked'] : ''
+    const [checked, setChecked] = useState();
+    const checkboxCheckedClassname = task.isChecked ? styles['checkbox-checked'] : styles['checkbox-unchecked']
+    const paragraphCheckedClassname = task.isChecked ? styles['paragraph-checked'] : ''
     
     function handleCheckboxChange(){
         setChecked(!checked);
@@ -16,16 +16,15 @@ export function Task(){
     return(
         <div className={styles.container}>
             <label htmlFor="checkbox" onClick={handleCheckboxChange}>
-                <input readOnly type="checkbox" checked={checked} />
+                <input readOnly type="checkbox" checked={task.isChecked} />
                 <span className={`${styles.checkbox} ${checkboxCheckedClassname}`}>
-                    { checked && <Check size={12} />}
+                    { task.isChecked && <Check size={12} />}
                 </span>
             </label>
 
             <p className={`${styles.paragraph} ${paragraphCheckedClassname}`}>
-                Este é um exemplo de tarefa
+                {task.title}
             </p>
-            
             
             <button>
                 <Trash size={24} weight="bold" />
