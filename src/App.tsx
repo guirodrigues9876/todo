@@ -3,6 +3,7 @@ import './global.css';
 import Logo from './assets/Logo.png';
 import { NewTask } from './components/NewTask';
 import { Task } from './components/Task';
+import { Empty } from './components/Empty';
 
 export function App() {
   return (
@@ -28,7 +29,9 @@ export function App() {
             </div>
           </div>
 
-          <Task />
+          {/* <Task /> */}
+
+          <Empty />
 
         </div>
       </main>
