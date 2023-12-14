@@ -43,11 +43,11 @@ export function App() {
           <div className={styles.info}>
             <div className={styles.created}>
               Tarefas criadas
-              <span>0</span>
+              <span>{tasks.length}</span>
             </div>
             <div className={styles.done}>
               Concluídas
-              <span>2 de 5</span>
+              <span>{`${tasks.filter(task => task.isChecked).length} de ${tasks.length}`}</span>
             </div>
           </div>
 
