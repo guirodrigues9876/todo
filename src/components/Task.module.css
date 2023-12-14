@@ -15,6 +15,16 @@
     border-radius: 0.5rem;
 }
 
+.paragraph{
+    color: var(--gray-100);
+}
+
+.paragraph-checked{
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+
 label {
     display: flex;
     padding: 3px;
