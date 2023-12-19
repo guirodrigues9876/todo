@@ -3,7 +3,7 @@ import { Trash, Check } from '@phosphor-icons/react'
 import styles from './Task.module.css';
 import { useState } from 'react';
 
-export function Task({ data, toggleTaskStatus}){
+export function Task({ data, toggleTaskStatus, removeTask}){
 
     const [checked, setChecked] = useState();
     const checkboxCheckedClassname = data.isChecked ? styles['checkbox-checked'] : styles['checkbox-unchecked']
@@ -11,6 +11,10 @@ export function Task({ data, toggleTaskStatus}){
 
     function handleTaskToggle(){
         toggleTaskStatus({id: data.id, value: !data.isChecked})
+    }
+
+    function handleRemoveTask(){
+        removeTask(data.id)
     }
 
     return(
@@ -26,7 +30,7 @@ export function Task({ data, toggleTaskStatus}){
                 {data.text}
             </p>
             
-            <button>
+            <button onClick={handleRemoveTask}>
                 <Trash size={24} weight="bold"/>
             </button>
         </div>

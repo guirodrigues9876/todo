@@ -32,15 +32,9 @@ export function App() {
     setInputValue('')
   }
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   function handleToggleTask({ id, value }: { id: number; value: boolean }) {
-    console.log(value)
     const updatedTasks = tasks.map((task) => {
       if (task.id === id) {
-        console.log("oi")
         return {...task, isChecked: value }
       }
       
@@ -48,11 +42,18 @@ export function App() {
     })
     
     setTasks(updatedTasks)
-    console.log("updated tasks")
-    console.log(updatedTasks)
-    sleep(20000)
-    console.log(tasks)
-    console.log(value)
+  }
+
+  function handleRemoveTask(id){
+
+    const updatedTasks = tasks.filter(task => task.id !== id);
+
+    if(!confirm('Deseja mesmo apagar essa tarefa?')){
+      return
+    }
+    
+    setTasks(updatedTasks)
+    
   }
 
   return (
@@ -99,6 +100,7 @@ export function App() {
                         key= {task.id}
                         data={task}
                         toggleTaskStatus={handleToggleTask}
+                        removeTask={handleRemoveTask}
                       />
                     )
                   })}
