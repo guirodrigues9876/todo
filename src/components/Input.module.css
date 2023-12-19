@@ -1,0 +1,15 @@
+input {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-700);
+    color:var(--gray-100);
+    background: var(--gray-500);
+}
+
+input:not(:placeholder-shown) {
+    border: 1px solid var(--purple-dark);
+}
