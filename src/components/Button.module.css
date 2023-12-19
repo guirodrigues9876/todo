@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    border: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    color: var(--gray-100);
+    background: var(--blue-dark);
+
+    transition: background-color 0.1s;
+}
+
+.container:hover {
+    background: var(--blue);
+}
