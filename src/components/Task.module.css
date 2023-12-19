@@ -65,12 +65,13 @@ label input[type='checkbox']{
     cursor: pointer;
 }
 
-.container > button {
+.container button {
     width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     border: none;
     background: transparent;
@@ -82,14 +83,14 @@ label input[type='checkbox']{
     border-radius: 4px;
 }
 
-.container > button > svg {
+.container button path {
     border-radius: 4px;
     fill: var(--gray-300);
     transition: 0.2s all;
 
 }
 
-.container > button > svg:hover {
-    cursor: pointer;
+.container button:hover path {
+    
     fill: var(--red);    
 }

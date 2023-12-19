@@ -3,31 +3,31 @@ import { Trash, Check } from '@phosphor-icons/react'
 import styles from './Task.module.css';
 import { useState } from 'react';
 
-export function Task({ task }){
+export function Task({ data, toggleTaskStatus}){
 
     const [checked, setChecked] = useState();
-    const checkboxCheckedClassname = task.isChecked ? styles['checkbox-checked'] : styles['checkbox-unchecked']
-    const paragraphCheckedClassname = task.isChecked ? styles['paragraph-checked'] : ''
-    
-    function handleCheckboxChange(){
-        setChecked(!checked);
+    const checkboxCheckedClassname = data.isChecked ? styles['checkbox-checked'] : styles['checkbox-unchecked']
+    const paragraphCheckedClassname = data.isChecked ? styles['paragraph-checked'] : ''
+
+    function handleTaskToggle(){
+        toggleTaskStatus({id: data.id, value: !data.isChecked})
     }
 
     return(
         <div className={styles.container}>
-            <label htmlFor="checkbox" onClick={handleCheckboxChange}>
-                <input readOnly type="checkbox" checked={task.isChecked} />
+            <label htmlFor="checkbox" onClick={handleTaskToggle}>
+                <input readOnly type="checkbox" checked={data.isChecked} />
                 <span className={`${styles.checkbox} ${checkboxCheckedClassname}`}>
-                    { task.isChecked && <Check size={12} />}
+                    { data.isChecked && <Check size={12} />}
                 </span>
             </label>
 
             <p className={`${styles.paragraph} ${paragraphCheckedClassname}`}>
-                {task.title}
+                {data.text}
             </p>
             
             <button>
-                <Trash size={24} weight="bold" />
+                <Trash size={24} weight="bold"/>
             </button>
         </div>
     )
