@@ -25,6 +25,12 @@
   border-radius: 15px;
 }
 
+.newTaskContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .info{
   display: flex;
   justify-content: space-between;
