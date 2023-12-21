@@ -1,6 +1,11 @@
 import styles from './Button.module.css'
 
-export function Button({children, ...rest}){
+type Props = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+  >
+
+export function Button({children, ...rest}: Props){
     return(
       <button className={styles.container} {...rest}>
         {children}

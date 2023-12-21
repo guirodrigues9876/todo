@@ -12,8 +12,14 @@ import { Empty } from './components/Empty';
 
 import { Input } from './components/Input';
 
+export interface ITask {
+  id: number
+  text: string
+  isChecked: boolean
+}
+
 export function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState<ITask[]>([])
   const [inputValue, setInputValue] = useState('')
 
   function handleAddTask(){
@@ -22,7 +28,7 @@ export function App() {
       return
     }
 
-    const newTask = {
+    const newTask: ITask = {
       id: uuidv4(),
       text: inputValue,
       isChecked: false
@@ -30,6 +36,18 @@ export function App() {
 
     setTasks((state) => [...state, newTask])
     setInputValue('')
+  }
+  
+  function handleRemoveTask(id: number){
+
+    const updatedTasks = tasks.filter(task => task.id !== id);
+
+    if(!confirm('Deseja mesmo apagar essa tarefa?')){
+      return
+    }
+    
+    setTasks(updatedTasks)
+    
   }
 
   function handleToggleTask({ id, value }: { id: number; value: boolean }) {
@@ -42,18 +60,6 @@ export function App() {
     })
     
     setTasks(updatedTasks)
-  }
-
-  function handleRemoveTask(id){
-
-    const updatedTasks = tasks.filter(task => task.id !== id);
-
-    if(!confirm('Deseja mesmo apagar essa tarefa?')){
-      return
-    }
-    
-    setTasks(updatedTasks)
-    
   }
 
   return (
