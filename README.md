@@ -1,6 +1,6 @@
 # <h1 align="center">Todo List</h1>
 
-<p align="center">An Todo List App</p>
+<p align="center">A Todo List App</p>
 
 <p align="center">
   <a href="#-Project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
